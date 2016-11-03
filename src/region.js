@@ -3,16 +3,23 @@ jvm.Region = function(config){
       text,
       offsets,
       labelDx,
-      labelDy;
+      labelDy,
+      wrapper;
 
   this.config = config;
   this.map = this.config.map;
 
+  wrapper = config.canvas.addGroup(config.canvas.rootElement);
+
   this.shape = config.canvas.addPath({
+    d: config.path
+  }, config.style, wrapper);
+
+  var invisibleShape = config.canvas.addPath({
     d: config.path,
     'data-code': config.code
-  }, config.style, config.canvas.rootElement);
-  this.shape.addClass('jvectormap-region jvectormap-element');
+  }, { initial: { 'fill': 'transparent', 'stroke': 'transparent', 'stroke-width': config.margin } }, wrapper);
+  invisibleShape.addClass('jvectormap-region jvectormap-element');
 
   bbox = this.shape.getBBox();
 
