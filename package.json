@@ -1,6 +1,6 @@
 {
-  "name": "jvectormap",
-  "title": "jVectorMap",
+  "name": "jvectormap-next",
+  "version": "3.0.0",
   "description": "jQuery plugin for embedding vector maps with reach API and methods for data visualization to the web-pages.",
   "keywords": [
     "map",
@@ -9,28 +9,18 @@
     "usa",
     "choropleth"
   ],
-  "version": "2.0.4",
-  "author": {
-    "name": "Kirill Lebedev",
-    "email": "echo.bjornd@gmail.com"
-  },
-  "licenses": [
-    {
-      "type": "AGPL",
-      "url": "http://www.gnu.org/copyleft/gpl.html"
-    },
-    {
-      "type": "Commercial",
-      "url": "http://www.binpress.com/license/read/id/3085/app/2122"
-    }
-  ],
-  "bugs": "https://github.com/bjornd/jvectormap/issues",
   "homepage": "http://jvectormap.com",
-  "docs": "http://jvectormap.com/documentation/",
-  "download": "http://jvectormap.com/download/",
+  "bugs": "https://github.com/bjornd/jvectormap/issues",
+  "license": "(AGPL OR Commercial)",
+  "author": "Kirill Lebedev <echo.bjornd@gmail.com>",
+  "contributors": [
+    "Alexandre Paixao <alexandre.paixao@live.fr>"
+  ],
   "main": "jquery-jvectormap.min.js",
+  "repository": "alex-pex/jvectormap",
   "scripts": {
-    "build": "./build.sh"
+    "build": "./build.sh",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "jquery": ">=1.5"
