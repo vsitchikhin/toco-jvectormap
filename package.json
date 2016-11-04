@@ -10,7 +10,7 @@
     "choropleth"
   ],
   "homepage": "http://jvectormap.com",
-  "bugs": "https://github.com/bjornd/jvectormap/issues",
+  "bugs": "https://github.com/alex-pex/jvectormap/issues",
   "license": "(AGPL OR Commercial)",
   "author": "Kirill Lebedev <echo.bjornd@gmail.com>",
   "contributors": [
