@@ -1,0 +1,21 @@
+{
+  "name": "@stadline/react-vectormap",
+  "version": "0.1.0",
+  "publishConfig": {
+    "registry": "https://nexus.stadline.com/repository/npm-private/"
+  },
+  "main": "lib/index",
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "cross-env BABEL_ENV=production babel --ignore spec.js,test.js --copy-files --source-maps true --out-dir lib src"
+  },
+  "babel": {
+    "extends": "../.babelrc"
+  },
+  "dependencies": {
+    "react-jvectormap": "^0.0.14"
+  },
+  "peerDependencies": {
+    "react": "16.*"
+  }
+}
