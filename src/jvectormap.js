@@ -114,8 +114,6 @@ var jvm = {
   }
 };
 
-jvm.$ = jQuery;
-
 /**
  * indexOf polyfill for IE < 9
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf

@@ -1,9 +1,9 @@
 #!/bin/bash
 
 files=( \
+  src/jvectormap.js \
   jquery-jvectormap.js \
   lib/jquery-mousewheel.js \
-  src/jvectormap.js \
   src/abstract-element.js \
   src/abstract-canvas-element.js \
   src/abstract-shape-element.js \
