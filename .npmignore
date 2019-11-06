@@ -13,3 +13,4 @@ yarn.lock
 
 /.editorconfig
 /build.sh
+/demo.html
