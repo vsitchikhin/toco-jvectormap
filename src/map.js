@@ -552,6 +552,7 @@ jvm.Map.prototype = {
   createTip: function(){
     var map = this;
 
+    jvm.$('body > .jvectormap-tip').remove();
     this.tip = jvm.$('<div/>').addClass('jvectormap-tip').appendTo(jvm.$('body'));
 
     this.container.mousemove(function(e){
