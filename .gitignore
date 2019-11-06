@@ -1,2 +1,11 @@
 .DS_Store
-jquery.jvectormap.min.js
+node_modules
+*.log
+npm-shrinkwrap.json
+package-lock.json
+yarn.lock
+
+# gitignore specific
+/jquery-jvectormap.js
+/jquery-jvectormap.min.js
+/jquery-jvectormap.min.map

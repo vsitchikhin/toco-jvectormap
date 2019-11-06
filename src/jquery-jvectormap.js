@@ -1,11 +1,24 @@
 /**
- * jVectorMap version 2.0.4
+ * jVectorMap version 3.0
  *
  * Copyright 2011-2014, Kirill Lebedev
  *
  */
 
-(function( $ ){
+(function (factory) {
+  if (typeof exports === 'object') {
+    // Node/CommonJS style for Browserify
+    module.exports = factory;
+  } else if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['jquery'], factory);
+  } else {
+    // Browser globals
+    factory(jQuery);
+  }
+}(function ($) {
+  jvm.$ = $;
+
   var apiParams = {
         set: {
           colors: 1,
@@ -41,4 +54,4 @@
 
     return this;
   };
-})( jQuery );
+}));

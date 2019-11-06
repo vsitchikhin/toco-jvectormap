@@ -1,9 +1,9 @@
 #!/bin/bash
 
 files=( \
-  jquery-jvectormap.js \
-  lib/jquery-mousewheel.js \
   src/jvectormap.js \
+  src/jquery-jvectormap.js \
+  lib/jquery-mousewheel.js \
   src/abstract-element.js \
   src/abstract-canvas-element.js \
   src/abstract-shape-element.js \
@@ -46,16 +46,16 @@ done
 
 if [ -z "$1" ]
   then
-    minified=jquery.jvectormap.min.js
+    filename=jquery-jvectormap
   else
-    minified=$1
+    filename=$1
 fi
 
-if [ -a $minified ]
+if [ -a "$filename.js" ]
   then
-    rm $minified
+    rm "$filename.js"
 fi
 
-cat ${files[*]} >> $minified
+cat ${files[*]} >> "$filename.js"
 
-uglifyjs $minified -o $minified -c
+./node_modules/.bin/uglifyjs "$filename.js" -o "$filename.min.js" --source-map "$filename.min.map" -c

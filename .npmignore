@@ -1,0 +1,16 @@
+.DS_Store
+node_modules
+*.log
+npm-shrinkwrap.json
+package-lock.json
+yarn.lock
+
+# npmignore specific
+/converter
+/lib
+/src
+/tests
+
+/.editorconfig
+/build.sh
+/demo.html

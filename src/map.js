@@ -47,6 +47,7 @@
     cursor: 'pointer'
   }
 }</pre>
+ * @param {Number} params.regionMargin Set the invisible margin around regions. This can enlarge event zones. Default value for that parameter is <code>0</code>.
  * @param {Object} params.markerStyle Set the styles for the map's markers. Any parameter suitable for <code>regionStyle</code> could be used as well as numeric parameter <code>r</code> to set the marker's radius. Default value for that parameter is:
 <pre>{
   initial: {
@@ -821,6 +822,7 @@ jvm.Map.prototype = {
         path: this.mapData.paths[key].path,
         code: key,
         style: jvm.$.extend(true, {}, this.params.regionStyle),
+        margin: this.params.regionMargin,
         labelStyle: jvm.$.extend(true, {}, this.params.regionLabelStyle),
         canvas: this.canvas,
         labelsGroup: this.regionLabelsGroup,
@@ -1131,6 +1133,7 @@ jvm.Map.defaultParams = {
     selectedHover: {
     }
   },
+  regionMargin: 0,
   regionLabelStyle: {
     initial: {
       'font-family': 'Verdana',
