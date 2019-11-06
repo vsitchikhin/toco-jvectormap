@@ -4,3 +4,12 @@ node_modules
 npm-shrinkwrap.json
 package-lock.json
 yarn.lock
+
+# npmignore specific
+/converter
+/lib
+/src
+/tests
+
+/.editorconfig
+/build.sh
