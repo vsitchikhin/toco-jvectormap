@@ -6,7 +6,6 @@ jvm.inherits(jvm.SVGImageElement, jvm.SVGShapeElement);
 
 jvm.SVGImageElement.prototype.applyAttr = function(attr, value){
   var that = this,
-      imageOffset,
       imageUrl;
 
   if (attr == 'image') {

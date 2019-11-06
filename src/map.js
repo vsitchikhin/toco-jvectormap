@@ -431,9 +431,7 @@ jvm.Map.prototype = {
           gesture.addPointer(e.pointerId);
         },
         handleGestureEvent = function(e){
-          var offset,
-              scale,
-              transXOld,
+          var transXOld,
               transYOld;
 
           if (e.translationX != 0 || e.translationY != 0) {

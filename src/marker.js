@@ -1,6 +1,5 @@
 jvm.Marker = function(config){
-  var text,
-      offsets;
+  var text;
 
   this.config = config;
   this.map = this.config.map;

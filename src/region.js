@@ -2,8 +2,6 @@ jvm.Region = function(config){
   var bbox,
       text,
       offsets,
-      labelDx,
-      labelDy,
       wrapper;
 
   this.config = config;
