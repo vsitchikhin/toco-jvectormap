@@ -58,4 +58,4 @@ fi
 
 cat ${files[*]} >> $minified
 
-uglifyjs $minified -o $minified -c
+./node_modules/.bin/uglifyjs $minified -o $minified -c
