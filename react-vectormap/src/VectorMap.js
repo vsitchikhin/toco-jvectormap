@@ -33,6 +33,42 @@ function VectorMap({ style: containerStyle, className, ...props }) {
   }, []);
 
   /**
+   * update map based on props
+   */
+  useEffect(
+    () => {
+      if (mapObjectRef.current.getSelectedMarkers() !== props.selectedMarkers) {
+        mapObjectRef.current.clearSelectedMarkers();
+        mapObjectRef.current.setSelectedMarkers(props.selectedMarkers);
+      }
+    },
+    [props.selectedMarkers]
+  );
+
+  useEffect(
+    () => {
+      if (mapObjectRef.current.getSelectedRegions() !== props.selectedRegions) {
+        mapObjectRef.current.clearSelectedRegions();
+        mapObjectRef.current.setSelectedRegions(props.selectedRegions);
+      }
+    },
+    [props.selectedRegions]
+  );
+
+  useEffect(
+    () => {
+      if (props.focusOn === undefined) return;
+
+      if (typeof props.focusOn === 'string') {
+        mapObjectRef.current.setFocus({ region: props.focusOn });
+      } else {
+        mapObjectRef.current.setFocus(props.focusOn);
+      }
+    },
+    [props.focusOn]
+  );
+
+  /**
    * render
    */
   const style = useMemo(
@@ -96,6 +132,8 @@ VectorMap.defaultProps = {
   style: {},
   /* map props */
   backgroundColor: 'transparent',
+  selectedMarkers: [],
+  selectedRegions: [],
   regionStyle: {
     initial: {
       fill: '#777',
