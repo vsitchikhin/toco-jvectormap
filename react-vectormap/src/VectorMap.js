@@ -1,96 +1,59 @@
-import React from 'react';
+import React, { useRef, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
 import addVectorMap from 'jvectormap-next';
 import 'jvectormap-next/jquery-jvectormap.css';
-import customMap from './maps/custom';
 
 addVectorMap($);
 
-class VectorMap extends React.PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.$node = null;
-    this.$mapObject = null;
-  }
-
+function VectorMap({ style: containerStyle, className, ...props }) {
   /**
-   * load required map
+   * update props ref
    */
-  componentWillMount() {
-    // const { map } = this.props;
+  const propsRef = useRef(props);
 
-    $.fn.vectorMap('addMap', 'custom', customMap);
-  }
+  useEffect(
+    () => {
+      propsRef.current = props;
+    },
+    [props]
+  );
 
   /**
    * generate the map
    */
-  componentDidMount() {
-    const { map } = this.props;
+  const nodeRef = useRef(null);
+  const mapObjectRef = useRef(null);
 
-    this.$node = $(this.refs.map);
+  useEffect(() => {
+    const $node = $(nodeRef.current);
 
-    if (map) {
-      this.$node.vectorMap({ ...this.props });
-      this.$mapObject = this.$node.vectorMap('get', 'mapObject');
-    }
-  }
-
-  /**
-   * re-render map with props change
-   */
-  componentDidUpdate() {
-    const { map } = this.props;
-
-    this.$node = $(this.refs.map);
-    this.$node.empty(); // remove old one
-
-    if (map) {
-      this.$node.vectorMap({ ...this.props });
-      this.$mapObject = this.$node.vectorMap('get', 'mapObject');
-    }
-  }
+    $node.vectorMap({ ...propsRef.current });
+    mapObjectRef.current = $node.vectorMap('get', 'mapObject');
+  }, []);
 
   /**
-   * set map background color
-   * @param color
+   * render
    */
-  setBackgroundColor(color) {
-    this.$mapObject.setBackgroundColor(color);
-  }
+  const style = useMemo(
+    () => ({
+      width: '100%',
+      height: '100%',
+      // append inline style if exists
+      ...containerStyle,
+    }),
+    [containerStyle]
+  );
 
-  /**
-   * get jvector map object
-   * @returns {null|*}
-   */
-  getMapObject() {
-    return this.$mapObject;
-  }
-
-  render() {
-    const props = {};
-    const { containerStyle, containerClassName } = this.props;
-
-    // append inline style if exists
-    if (containerStyle) {
-      props.style = { width: '100%', height: '100%', ...containerStyle };
-    }
-
-    // append class if exists
-    if (containerClassName) {
-      props.className = containerClassName;
-    }
-
-    return <div ref="map" {...props} />;
-  }
+  return <div ref={nodeRef} style={style} className={className} />;
 }
 
 VectorMap.propTypes = {
-  containerStyle: PropTypes.object,
-  containerClassName: PropTypes.string,
-  map: PropTypes.object.isRequired,
+  /* div props */
+  style: PropTypes.object,
+  className: PropTypes.string,
+  /* map props */
+  map: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string,
   zoomOnScroll: PropTypes.bool,
   zoomOnScrollSpeed: PropTypes.bool,
@@ -104,6 +67,7 @@ VectorMap.propTypes = {
   markersSelectable: PropTypes.bool,
   markersSelectableOne: PropTypes.bool,
   regionStyle: PropTypes.object,
+  regionMargin: PropTypes.number,
   regionLabelStyle: PropTypes.object,
   markerStyle: PropTypes.object,
   markerLabelStyle: PropTypes.object,
@@ -128,8 +92,15 @@ VectorMap.propTypes = {
 };
 
 VectorMap.defaultProps = {
-  containerStyle: {},
+  /* div props */
+  style: {},
+  /* map props */
   backgroundColor: 'transparent',
+  regionStyle: {
+    initial: {
+      fill: '#777',
+    },
+  },
 };
 
-export default VectorMap;
+export default React.memo(VectorMap);

@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 // components
-export { default as VectorMap } from './VectorMap.tsx';
+export { default as VectorMap } from './VectorMap';
+export { default as CustomVectorMap } from './CustomVectorMap';
