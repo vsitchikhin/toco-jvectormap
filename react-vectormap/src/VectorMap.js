@@ -28,7 +28,28 @@ function VectorMap({ style: containerStyle, className, ...props }) {
   useEffect(() => {
     const $node = $(nodeRef.current);
 
-    $node.vectorMap({ ...propsRef.current });
+    // rewrite callbacks to always be synced with props
+    const callbacks = [
+      'onRegionTipShow',
+      'onRegionOver',
+      'onRegionOut',
+      'onRegionClick',
+      'onRegionSelected',
+      'onMarkerTipShow',
+      'onMarkerOver',
+      'onMarkerOut',
+      'onMarkerClick',
+      'onMarkerSelected',
+      'onViewportChange',
+    ].reduce((callbackProps, name) => {
+      const callback = (...args) => {
+        if (propsRef.current[name]) propsRef.current[name](...args);
+      };
+
+      return { ...callbackProps, [name]: callback };
+    }, {});
+
+    $node.vectorMap({ ...propsRef.current, ...callbacks });
     mapObjectRef.current = $node.vectorMap('get', 'mapObject');
   }, []);
 
