@@ -2,7 +2,7 @@
   "name": "@stadline/react-vectormap",
   "version": "0.1.0",
   "publishConfig": {
-    "registry": "https://nexus.stadline.com/repository/npm-private/"
+    "registry": "https://registry.npmjs.org/"
   },
   "main": "lib/index",
   "scripts": {
