@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "license": "MIT",
   "repository": "github:stadline/react-packages",
-  "main": "lib/index",
+  "main": "lib/index.cjs.js",
+  "browser": "lib/index.umd.js",
+  "module": "lib/index.es.js",
   "scripts": {
     "clean": "rimraf lib",
     "build": "cross-env BABEL_ENV=production babel --ignore spec.js,test.js --copy-files --source-maps true --out-dir lib src"
