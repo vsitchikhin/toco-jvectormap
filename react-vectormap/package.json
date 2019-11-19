@@ -3,12 +3,12 @@
   "version": "0.1.2",
   "license": "MIT",
   "repository": "github:stadline/react-packages",
-  "main": "lib/index.cjs.js",
-  "unpkg": "lib/index.umd.js",
-  "module": "lib/index.es.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
   "scripts": {
-    "clean": "rimraf lib",
-    "build": "cross-env BABEL_ENV=production babel --ignore spec.js,test.js --copy-files --source-maps true --out-dir lib src"
+    "clean": "rimraf dist",
+    "build": "cross-env BABEL_ENV=production bili"
   },
   "babel": {
     "extends": "../.babelrc"
