@@ -4,7 +4,10 @@ import $ from 'jquery';
 import addVectorMap from 'jvectormap-next';
 import 'jvectormap-next/jquery-jvectormap.css';
 
-addVectorMap($);
+if (typeof module === 'object') {
+  // Bind jVectorMap and jQuery
+  addVectorMap($);
+}
 
 function VectorMap({ style: containerStyle, className, ...props }) {
   /**
