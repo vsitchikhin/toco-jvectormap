@@ -5,6 +5,7 @@ module.exports = {
   output: {
     moduleName: pkg.name,
     format: ['cjs', 'esm', 'umd', 'umd-min'],
+    dir: `${__dirname}/dist`,
   },
   externals: ['jvectormap-next', 'jquery', 'react'],
 };
