@@ -61,6 +61,22 @@ function VectorMap({ style: containerStyle, className, ...props }) {
    */
   useEffect(
     () => {
+      if (props.series && props.series.markers) {
+        props.series.markers.forEach((serie, index) => {
+          mapObjectRef.current.series.markers[index].setValues(serie.values);
+        });
+      }
+      if (props.series && props.series.regions) {
+        props.series.regions.forEach((serie, index) => {
+          mapObjectRef.current.series.regions[index].setValues(serie.values);
+        });
+      }
+    },
+    [props.series]
+  );
+
+  useEffect(
+    () => {
       if (mapObjectRef.current.getSelectedMarkers() !== props.selectedMarkers) {
         mapObjectRef.current.clearSelectedMarkers();
         mapObjectRef.current.setSelectedMarkers(props.selectedMarkers);
