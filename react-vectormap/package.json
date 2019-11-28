@@ -1,6 +1,6 @@
 {
   "name": "@stadline/react-vectormap",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "license": "MIT",
   "repository": "github:stadline/react-packages",
   "main": "dist/index.js",
