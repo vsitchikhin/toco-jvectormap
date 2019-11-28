@@ -63,11 +63,13 @@ function VectorMap({ style: containerStyle, className, ...props }) {
     () => {
       if (props.series && props.series.markers) {
         props.series.markers.forEach((serie, index) => {
+          mapObjectRef.current.series.markers[index].clear();
           mapObjectRef.current.series.markers[index].setValues(serie.values);
         });
       }
       if (props.series && props.series.regions) {
         props.series.regions.forEach((serie, index) => {
+          mapObjectRef.current.series.regions[index].clear();
           mapObjectRef.current.series.regions[index].setValues(serie.values);
         });
       }
