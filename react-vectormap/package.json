@@ -8,8 +8,9 @@
   "unpkg": "dist/index.umd.js",
   "scripts": {
     "clean": "rimraf dist",
-    "build": "cd ../.. && cross-env BABEL_ENV=production bili --root-dir src/react-vectormap"
+    "build": "cd .. && cross-env BABEL_ENV=production bili --root-dir react-vectormap"
   },
+  "files": ["dist/*"],
   "babel": {
     "extends": "../.babelrc"
   },

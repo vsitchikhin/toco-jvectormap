@@ -17,6 +17,7 @@
     "Alexandre Paixao <alexandre.paixao@live.fr>"
   ],
   "main": "jquery-jvectormap.js",
+  "files": ["/jquery-*", "/LICENSE-*"],
   "repository": "alex-pex/jvectormap",
   "scripts": {
     "build": "./build.sh",

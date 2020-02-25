@@ -1,8 +1,14 @@
 {
   "name": "root",
   "private": true,
-  "workspaces": ["*"],
+  "workspaces": [
+    "*"
+  ],
   "devDependencies": {
-    "lerna": "^3.20.2"
+    "babel-preset-react-app": "^9.1.1",
+    "bili": "^4.8.1",
+    "cross-env": "^5.2.0",
+    "lerna": "^3.20.2",
+    "react": "^16.12.0"
   }
 }

@@ -7,5 +7,5 @@ module.exports = {
     format: ['cjs', 'esm', 'umd', 'umd-min'],
     dir: `${__dirname}/dist`,
   },
-  externals: ['jvectormap-next', 'jquery', 'react'],
+  externals: [/jvectormap-next\/jquery-jvectormap\.js/, 'jquery', 'react'],
 };
