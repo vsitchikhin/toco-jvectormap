@@ -2,7 +2,7 @@
   "name": "@stadline/react-vectormap",
   "version": "0.1.8",
   "license": "MIT",
-  "repository": "github:stadline/react-packages",
+  "repository": "alex-pex/jvectormap",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.umd.js",
@@ -11,9 +11,6 @@
     "build": "cd .. && cross-env BABEL_ENV=production bili --root-dir react-vectormap"
   },
   "files": ["dist/*"],
-  "babel": {
-    "extends": "../.babelrc"
-  },
   "dependencies": {
     "jquery": "^3.4.0",
     "jvectormap-next": "^3.1.0",
