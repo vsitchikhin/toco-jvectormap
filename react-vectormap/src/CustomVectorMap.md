@@ -14,5 +14,16 @@ initialState = { count: 1 };
       className={'map-' + state.count}
     />
   </div>
-</>;
+</>
+```
+
+```js
+const mapContent = require('jvectormap-content/jquery-jvectormap-world-mill.js');
+
+<div style={{ height: 500 }}>
+  <CustomVectorMap
+    map='world-mill'
+    mapContent={mapContent}
+  />
+</div>
 ```

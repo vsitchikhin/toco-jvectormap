@@ -9,6 +9,7 @@
     "styleguide:build": "styleguidist build"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
     "babel-loader": "^8.0.6",
     "babel-preset-react-app": "^9.1.1",
     "bili": "^4.8.1",

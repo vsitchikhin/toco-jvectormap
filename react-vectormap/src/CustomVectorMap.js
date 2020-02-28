@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import $ from 'jquery';
 import VectorMap from './VectorMap';
 
-function CustomVectorMap(props) {
+function CustomVectorMap({ mapContent, ...props }) {
   /**
    * load required map
    */
   useLayoutEffect(
     () => {
-      $.fn.vectorMap('addMap', props.map, props.mapContent);
+      $.fn.vectorMap('addMap', props.map, mapContent);
     },
-    [props.map, props.mapContent]
+    [props.map, mapContent]
   );
 
   return <VectorMap {...props} />;
