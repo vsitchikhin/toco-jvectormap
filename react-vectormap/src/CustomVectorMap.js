@@ -1,7 +1,7 @@
 import React, { useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
-import VectorMap from './VectorMap';
+import VectorMapAdapter from './VectorMapAdapter';
 
 function CustomVectorMap({ mapContent, ...props }) {
   /**
@@ -14,7 +14,7 @@ function CustomVectorMap({ mapContent, ...props }) {
     [props.map, mapContent]
   );
 
-  return <VectorMap {...props} />;
+  return <VectorMapAdapter {...props} />;
 }
 
 CustomVectorMap.propTypes = {

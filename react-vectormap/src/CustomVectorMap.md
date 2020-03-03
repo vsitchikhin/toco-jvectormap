@@ -18,7 +18,7 @@ initialState = { count: 1 };
 ```
 
 ```js
-const mapContent = require('jvectormap-content/jquery-jvectormap-world-mill.js');
+const mapContent = require('jvectormap-content/fr_regions_2016-mill.js');
 
 <div style={{ height: 500 }}>
   <CustomVectorMap
