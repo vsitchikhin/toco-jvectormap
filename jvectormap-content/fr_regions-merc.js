@@ -1,4 +1,4 @@
-module.exports = {
+var map = {
   insets: [
     {
       width: 100,
@@ -202,3 +202,11 @@ module.exports = {
   projection: { type: "merc", centralMeridian: 0.0 },
   width: 900.0
 };
+
+if (typeof module === 'object' && module.exports) {
+  // Node/CommonJS
+  module.exports = map;
+} else {
+  // Browser globals
+  jQuery.fn.vectorMap('addMap', 'fr_regions_merc', map);
+}

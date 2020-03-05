@@ -1,4 +1,4 @@
-module.exports = {
+var map = {
   insets: [
     {
       width: 400,
@@ -137,3 +137,11 @@ module.exports = {
   projection: { type: "mill", centralMeridian: 0.0 },
   width: 1300.0
 };
+
+if (typeof module === "object" && module.exports) {
+  // Node/CommonJS
+  module.exports = map;
+} else {
+  // Browser globals
+  jQuery.fn.vectorMap("addMap", "pt_mill", map);
+}

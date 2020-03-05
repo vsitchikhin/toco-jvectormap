@@ -1,4 +1,4 @@
-module.exports = {
+var map = {
   insets: [
     {
       width: 220,
@@ -292,3 +292,11 @@ module.exports = {
   projection: { type: "aea", centralMeridian: -100.0 },
   width: 900.0
 };
+
+if (typeof module === 'object' && module.exports) {
+  // Node/CommonJS
+  module.exports = map;
+} else {
+  // Browser globals
+  jQuery.fn.vectorMap('addMap', 'us_aea', map);
+}
