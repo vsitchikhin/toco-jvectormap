@@ -1,31 +1,38 @@
 {
-  "name": "jvectormap-next",
-  "version": "3.1.0",
-  "description": "jQuery plugin for embedding vector maps with reach API and methods for data visualization to the web-pages.",
-  "keywords": [
-    "map",
-    "vector",
-    "world",
-    "usa",
-    "choropleth"
+  "name": "jvectormap",
+  "private": true,
+  "workspaces": [
+    "*"
   ],
-  "homepage": "http://jvectormap.com",
-  "bugs": "https://github.com/alex-pex/jvectormap/issues",
-  "license": "(AGPL OR Commercial)",
-  "author": "Kirill Lebedev <echo.bjornd@gmail.com>",
-  "contributors": [
-    "Alexandre Paixao <alexandre.paixao@live.fr>"
-  ],
-  "main": "jquery-jvectormap.js",
-  "repository": "alex-pex/jvectormap",
   "scripts": {
-    "build": "./build.sh",
-    "prepublishOnly": "npm run build"
-  },
-  "dependencies": {
-    "jquery": ">=1.7"
+    "start": "styleguidist server",
+    "build": "styleguidist build"
   },
   "devDependencies": {
-    "uglify-js": "^2.4.10"
+    "@babel/core": "^7.0.0",
+    "@typescript-eslint/eslint-plugin": "2.x",
+    "@typescript-eslint/parser": "2.x",
+    "babel-eslint": "10.x",
+    "babel-loader": "^8.0.6",
+    "babel-preset-react-app": "^9.1.1",
+    "bili": "^4.8.1",
+    "cross-env": "^5.2.0",
+    "css-loader": "^3.4.2",
+    "eslint": "6.x",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-react-app": "^5.2.0",
+    "eslint-plugin-flowtype": "3.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "1.x",
+    "lerna": "^3.20.2",
+    "prettier": "^1.19.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-styleguidist": "^10.6.2",
+    "style-loader": "^1.1.3",
+    "typescript": "^3.8.2",
+    "webpack": "^4.41.6"
   }
 }
