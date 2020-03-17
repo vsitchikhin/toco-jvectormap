@@ -1,6 +1,6 @@
 {
   "name": "jvectormap-next",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "jQuery plugin for embedding vector maps with reach API and methods for data visualization to the web-pages.",
   "keywords": [
     "map",
@@ -17,7 +17,10 @@
     "Alexandre Paixao <alexandre.paixao@live.fr>"
   ],
   "main": "jquery-jvectormap.js",
-  "files": ["/jquery-*", "/LICENSE-*"],
+  "files": [
+    "/jquery-*",
+    "/LICENSE-*"
+  ],
   "repository": "alex-pex/jvectormap",
   "scripts": {
     "build": "./build.sh",
