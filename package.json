@@ -1,12 +1,12 @@
 {
-  "name": "root",
+  "name": "jvectormap",
   "private": true,
   "workspaces": [
     "*"
   ],
   "scripts": {
-    "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build"
+    "start": "styleguidist server",
+    "build": "styleguidist build"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

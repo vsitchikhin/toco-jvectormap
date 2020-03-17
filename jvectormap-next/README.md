@@ -8,8 +8,12 @@ Example
 ```javascript
 var $ = require('jquery');
 
-// load jvectormap jquery plugin
+var $mountNode = $('[data-preview="jvectormap-next"] [data-testid="mountNode"]');
+$mountNode.empty().css('height', 500);
+
+// load jvectormap jquery plugin + map content
 require('jvectormap-next')($);
+$.fn.vectorMap('addMap', 'world_mill', require('jvectormap-content/world-mill'));
 
 // render the map
 var gdpData = {
@@ -19,7 +23,7 @@ var gdpData = {
     // ...
 }
 
-$('#world-map-gdp').vectorMap({
+$mountNode.vectorMap({
     map: 'world_mill',
     series: {
         regions: [{
@@ -32,4 +36,7 @@ $('#world-map-gdp').vectorMap({
         el.html(el.html()+' (GDP - '+gdpData[code]+')');
     }
 });
+
+// this is needed for the storybook to work properly
+false
 ```
