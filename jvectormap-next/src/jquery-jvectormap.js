@@ -5,17 +5,8 @@
  *
  */
 
-(function (factory) {
-  if (typeof exports === 'object') {
-    // Node/CommonJS style for Browserify
-    module.exports = factory;
-  } else if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module.
-    define(['jquery'], factory);
-  } else {
-    // Browser globals
-    factory(jQuery);
-  }
+(function (create) {
+  module.exports = create;
 }(function ($) {
   jvm.$ = $;
 
@@ -37,9 +28,8 @@
       };
 
   $.fn.vectorMap = function(options) {
-    var map,
-        methodName,
-        map = this.children('.jvectormap-container').data('mapObject');
+    var methodName,
+      map = this.children('.jvectormap-container').data('mapObject');
 
     if (options === 'addMap') {
       jvm.Map.maps[arguments[1]] = arguments[2];
