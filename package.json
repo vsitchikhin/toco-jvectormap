@@ -1,6 +1,5 @@
 {
-  "name": "jvectormap",
-  "private": true,
+  "name": "toco-jvectormap",
   "workspaces": [
     "*"
   ],
