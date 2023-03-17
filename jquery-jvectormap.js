@@ -188,9 +188,7 @@ if (!Array.prototype.indexOf) {
  *
  */
 
-(function (create) {
-  module.exports = create;
-}(function ($) {
+module.exports = function create($) {
   jvm.$ = $;
 
   var apiParams = {
@@ -227,7 +225,7 @@ if (!Array.prototype.indexOf) {
 
     return this;
   };
-}));
+};
 /*! Copyright (c) 2013 Brandon Aaron (http://brandon.aaron.sh)
  * Licensed under the MIT License (LICENSE.txt).
  *
@@ -236,9 +234,7 @@ if (!Array.prototype.indexOf) {
  * Requires: jQuery 1.2.2+
  */
 
-(function (init) {
-    module.exports = init
-}(function ($) {
+module.exports = function init($) {
 
     var toFix  = ['wheel', 'mousewheel', 'DOMMouseScroll', 'MozMousePixelScroll'],
         toBind = ( 'onwheel' in document || document.documentMode >= 9 ) ?
@@ -419,7 +415,7 @@ if (!Array.prototype.indexOf) {
         return special.settings.adjustOldDeltas && orgEvent.type === 'mousewheel' && absDelta % 120 === 0;
     }
 
-}));
+};
 /**
  * Basic wrapper for DOM element.
  * @constructor
