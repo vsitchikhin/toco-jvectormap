@@ -4,6 +4,7 @@
   "workspaces": [
     "*"
   ],
+  "main": "jquery-jvectormap.js",
   "scripts": {
     "start": "styleguidist server",
     "build": "./jvectormap-next/build.sh"
