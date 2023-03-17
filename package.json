@@ -1,11 +1,12 @@
 {
   "name": "toco-jvectormap",
+  "version": "1.0.0",
   "workspaces": [
     "*"
   ],
   "scripts": {
     "start": "styleguidist server",
-    "build": "styleguidist build"
+    "build": "./jvectormap-next/build.sh"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
