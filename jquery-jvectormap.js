@@ -188,7 +188,7 @@ if (!Array.prototype.indexOf) {
  *
  */
 
-export function create($) {
+module.exports.create = function create($) {
   jvm.$ = $;
 
   var apiParams = {
@@ -234,7 +234,7 @@ export function create($) {
  * Requires: jQuery 1.2.2+
  */
 
-export function init($) {
+module.exports.init = function init($) {
 
     var toFix  = ['wheel', 'mousewheel', 'DOMMouseScroll', 'MozMousePixelScroll'],
         toBind = ( 'onwheel' in document || document.documentMode >= 9 ) ?
