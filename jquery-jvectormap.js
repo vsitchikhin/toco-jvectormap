@@ -2644,6 +2644,7 @@ jvm.Map.prototype = {
         transYDiff,
         transX,
         transY,
+        zoomStep,
         deferred = new jvm.$.Deferred();
 
     if (scale > this.params.zoomMax * this.baseScale) {
@@ -2676,7 +2677,7 @@ jvm.Map.prototype = {
         that.transX = (transXStart + transXDiff * i) / that.scale;
         that.transY = (transYStart + transYDiff * i) / that.scale;
         that.applyTransform();
-        if (i == count) {
+        if (i === count) {
           clearInterval(interval);
           that.container.trigger(viewportChangeEvent, [scale/that.baseScale]);
           deferred.resolve();
@@ -3158,8 +3159,6 @@ jvm.Map.prototype = {
 
 jvm.Map.maps = {};
 jvm.Map.defaultParams = {
-  map: 'world_mill_en',
-  backgroundColor: '#505050',
   zoomButtons: true,
   zoomOnScroll: true,
   zoomOnScrollSpeed: 3,
